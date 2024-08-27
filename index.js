@@ -13,10 +13,12 @@ cloudinary.config({                                             //configurar clo
     api_secret: process.env.CLOUD_API_SECRET
 })
 
+const cors = require("cors")        //instalar dependencia cors
+
 connectDB();
 const server = express();
 const PORT = process.env.PORT;                                  // usamos la variable de entorno PORT
-
+server.use(cors())              //habilita que cualquier ruta pueda hacer peticiones a este servidor
 server.use(express.json())
 server.use("/", router)                                         //film
 server.use("/user", routerUser)                                 //user

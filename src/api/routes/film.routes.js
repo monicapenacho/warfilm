@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { getfilm, getFilmName, add, deleteFilm, updateFilm } = require("../controllers/film.controllers")
+const { getfilm, getFilmName, add, deleteFilm, updateFilm, getFilmById } = require("../controllers/film.controllers")
 
 router.get("/getfilm", getfilm);
 router.get("/getByName/:name", getFilmName);
+router.get("/getById/:id", getFilmById);
 router.post("/addFilm", add);
 router.delete("/delete/:id", deleteFilm);
 

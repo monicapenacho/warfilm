@@ -47,6 +47,13 @@ const getFilmName = async (req, res) => {
 
     res.json(filmByName)
 }
+//buscar un film por id
+const getFilmById = async (req, res) => {
+    const { id } = req.params
+    const filmById = await Film.findById(id);
+    res.json(filmById)
+
+}
 // añadir un nuevo film
 const add = async (req, res) => {
     try {
@@ -96,7 +103,7 @@ const updateFilm = async (req, res) => {
     }
 
 }
-module.exports = { getfilm, getFilmName, add, deleteFilm, updateFilm };
+module.exports = { getfilm, getFilmName, getFilmById, add, deleteFilm, updateFilm };
 
 
 

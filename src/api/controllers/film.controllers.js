@@ -88,10 +88,10 @@ const deleteFilm = async (req, res) => {
 
 const updateFilm = async (req, res) => {
     try {
-        const { id } = req.query;
-        const filmBody = req.body;
+        const { id } = req.params;
+        const filmBody = req.body;                  //nueva película
         const updateFilm = await Film.findByIdAndUpdate(id, filmBody, { new: true })
-        //valo
+        
         if (!updateFilm) {
             res.json({ success: false, message: "el id no existe" })
         } else {

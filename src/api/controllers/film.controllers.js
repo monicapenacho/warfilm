@@ -9,7 +9,7 @@ const getfilm = async (req, res) => {                  //función que busca en b
         let limit = parseInt(req.query.limit)
         const numFilms = await Film.countDocuments()
         pag = !isNaN(pag) ? pag : 1;
-        limit = !isNaN(limit) ? limit : 5; // limite por defecto
+        limit = !isNaN(limit) ? limit : 10; // limite por defecto
         console.log(pag, limit)
 
         let numPage = Math.ceil(numFilms / limit)
@@ -95,7 +95,7 @@ const updateFilm = async (req, res) => {
         if (!updateFilm) {
             res.json({ success: false, message: "el id no existe" })
         } else {
-            res.json(updateFilm)
+            res.json(updateFilm)           // habría que incluir mensaje de éxitonp
         }
     } catch (error) {
         console.log(error)

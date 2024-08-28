@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");                                           //JWT importar la dependencia
+const jwt = require("jsonwebtoken");                                           //JWT Login importar la dependencia
 
 
 const generateToken = (data) => {                                              //JWT función para crear el Token (función sign)

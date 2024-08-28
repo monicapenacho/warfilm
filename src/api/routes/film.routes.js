@@ -10,7 +10,8 @@ router.post("/addFilm", add);
 router.delete("/delete/:id", deleteFilm);
 
 //el id lo vamos a enviar a traves de los query
-router.put("/updateFilm/:id", [isAuth], updateFilm)
+// router.put("/updateFilm/:id", [isAuth], updateFilm)
+router.put("/updateFilm/:id", updateFilm)
 
 
 module.exports = router
